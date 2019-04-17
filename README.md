@@ -7,11 +7,11 @@ Protect your application from antivirus on Windows
 
 ```
 [C/C++ application] +-----> [bxsdk] => execute => exit code
-                               ^
-                               | [decompress]
-              bin => resources +
+  > resources                  ^
+    | icon                     | [decompress] :: built-in
+    | rcdata: bin +------------+
                ^
-               | [compress]
+               | [compress] :: ./tools/tobin.exe
 [Another .exe] +
 ```
 
