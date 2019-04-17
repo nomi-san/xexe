@@ -1,0 +1,34 @@
+#include <windows.h>
+#include "res.h"
+
+APP_ICON ICON "res/icon.ico" ////
+APP_BIN RCDATA "res/app.bin" ////
+
+1 VERSIONINFO
+FILEVERSION    1, 0, 0, 1 ////
+PRODUCTVERSION 1, 0, 0, 1 ////
+FILEOS 0x4
+FILETYPE 0x0
+{
+	BLOCK "StringFileInfo"
+	{
+		BLOCK "080904b0"
+		{
+			VALUE "CompanyName", "Example.Team"
+				VALUE "Comments", "http://www.example.com"
+				VALUE "FileDescription", "Example Executable"
+				VALUE "FileVersion", "1, 0, 0, 1"
+				VALUE "InternalName", "example.exe"
+				VALUE "LegalCopyright", "\xA9 2019-2019 example@domain.com"
+				VALUE "OriginalFilename", "example.exe"
+				VALUE "ProductName", "The Example"
+				VALUE "ProductVersion", "1, 0, 0, 1"
+		}
+	}
+
+	BLOCK "VarFileInfo"
+	{
+		VALUE "Translation", 0x0809, 0x04B0
+	}
+}
+
