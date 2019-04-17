@@ -41,17 +41,20 @@ main(int argc, char *argv[])
 	CloseHandle(file);
 
 	DWORD exit_code = 0;
+	char cmd[1024];
+	char *scmd = cmd;
 
 #if defined(__WINDOWS)
-	ExecuteA(name, lpCmdLine, &exit_code);
+	scmd += sprintf(cmd, "%s %s", name, lpCmdLine);
+	cmd[scmd - cmd] = '\0';
+	ExecuteA(NULL, cmd, &exit_code);
 #else
-	char lpCmdLine[MAX_PATH];
-	char *str = lpCmdLine;
+	char *str = cmd;
 	for (int i = 0; i < argc; i++) \
 		str += sprintf(str, "%s ", argv[i]);
 
-	lpCmdLine[str - lpCmdLine] = '\0';
-	ExecuteA(name, lpCmdLine, &exit_code);
+	cmd[str - cmd] = '\0';
+	ExecuteA(name, cmd, &exit_code);
 #endif
 
 	BoxedAppSDK_Exit();
