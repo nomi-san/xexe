@@ -16,6 +16,13 @@ extern "C" {
 #define __X86
 #endif
 
+#if (defined(WINMAIN) || defined(WINDOWS) || defined(_WINDOWS)) \
+	&& (!defined(CONSOLE) || !defined(_CONSOLE))
+#define __WINDOWS
+#else
+#define __CONSOLE
+#endif
+
 int LoadFile(const char *filename, char **data);
 int SaveFile(const char *filename, const char *data, size_t size);
 int SaveHeaderBytes(const char *filename, const char *name, const void *data, size_t size);
