@@ -5,9 +5,19 @@ Protect your application from antivirus on Windows
 - [BoxedAppSDK](https://www.boxedapp.com/boxedappsdk/) for create virtual file
 - [QuickLZ](http://www.quicklz.com/) for compress/decompress data
 
+```
+[C/C++ application] +-----> [bxsdk] => execute => exit code
+                               ^
+                               | [decompress]
+              bin => resources +
+               ^
+               | [compress]
+[Another .exe] +
+```
+
 ### usage
 
-- Compress a file to **.bin**
+- Compress an executable file to **.bin**
 ```
 $> tools/tobin.exe file.input output.bin
 ```
