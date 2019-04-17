@@ -18,3 +18,7 @@ $> tools/tobin.exe file.input output.bin
 - Open **xexe.sln** (with Visual Studio 2010+) and build on **Release** mode
   - **consle** for console subsystem (with console application)
   - **windows** for windows subsystem (with GUI application)
+
+You can use compiled binaries (in **bin/..**) and change its resources by using [Resource Hacker](http://www.angusj.com/resourcehacker/).
+- RCData: .bin
+- Icons: .ico
