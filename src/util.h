@@ -28,9 +28,9 @@ int SaveFile(const char *filename, const char *data, size_t size);
 int SaveHeaderBytes(const char *filename, const char *name, const void *data, size_t size);
 
 #if defined(UNICODE) || defined(_UNICODE)
-#define fexe_Execute fexe_ExecuteW
+#define Execute ExecuteW
 #else
-#define fexe_Execute fexe_ExecuteA
+#define Execute ExecuteA
 #endif
 
 BOOL ExecuteW(wchar_t *cmdLine, DWORD *exitCode);
